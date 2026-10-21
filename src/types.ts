@@ -1,5 +1,3 @@
-export type Mode = "demo" | "live";
-
 export type ScanSpeed = "gentle" | "balanced" | "fast";
 
 export interface Train {

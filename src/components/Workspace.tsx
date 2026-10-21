@@ -7,17 +7,15 @@ import {
   Database,
   KeyRound,
   Loader2,
-  Play,
   RotateCcw,
   Share2,
-  Sparkles,
   Square,
   Ticket,
   TrainFront,
   Wifi,
   WifiOff,
 } from "lucide-react";
-import type { Counts, FormState, FoundRoute, Mode, Session, Train, TrainRoute } from "../types";
+import type { Counts, FormState, FoundRoute, Session, Train, TrainRoute } from "../types";
 import { CLASS_BY_CODE, SPEED_MS } from "../types";
 import type { ScanFatalError } from "../lib/scan";
 import type { ScanProgress } from "../lib/scan";
@@ -41,7 +39,6 @@ export interface ScanMeta {
   fi: number;
   ti: number;
   startedAt: number;
-  mode: Mode;
   pairTotal: number;
 }
 
@@ -58,7 +55,6 @@ interface WorkspaceProps {
   onRescan: () => void;
   onOpenSession: () => void;
   onShare: () => void;
-  onUseDemo: () => void;
   onUseClass: (cls: string) => void;
   onToast: (message: string, type?: "success" | "error" | "info") => void;
 }
@@ -76,7 +72,6 @@ export function Workspace({
   onRescan,
   onOpenSession,
   onShare,
-  onUseDemo,
   onUseClass,
   onToast,
 }: WorkspaceProps) {
@@ -95,7 +90,7 @@ export function Workspace({
   const percent = progress.total ? Math.round((progress.done / progress.total) * 100) : 0;
   const elapsed = Math.max(0, Math.round((now - meta.startedAt) / 1000));
   const remaining = Math.max(0, progress.total - progress.done);
-  const eta = Math.ceil((remaining * SPEED_MS[form.speed]) / 1000);
+  const eta = Math.ceil((remaining * SPEED_MS[form.speed]) / 2000);
   const availablePairs = useMemo(
     () => Object.values(snapshotCounts).filter((value) => value && value.online > 0).length,
     [snapshotCounts],
@@ -127,9 +122,8 @@ export function Workspace({
               <span>
                 <TrainFront size={13} /> {stops.length} stops
               </span>
-              <span className={meta.mode === "live" ? "chip-live" : "chip-demo"}>
-                {meta.mode === "live" ? <Wifi size={13} /> : <Sparkles size={13} />}
-                {meta.mode === "live" ? "Live seats" : "Sample seats"}
+              <span className="chip-live">
+                <Wifi size={13} /> Live seats
               </span>
             </div>
           </div>
@@ -156,7 +150,6 @@ export function Workspace({
               session={session}
               onOpenSession={onOpenSession}
               onRescan={onRescan}
-              onUseDemo={onUseDemo}
               onUseClass={onUseClass}
             />
           ) : (
@@ -228,22 +221,16 @@ export function Workspace({
                   {progress.cached > 0
                     ? `${progress.cached} cached pair${progress.cached === 1 ? "" : "s"} reused · `
                     : ""}
-                  {meta.mode === "demo"
-                    ? "Simulated seats for exploring the planner"
-                    : `Live lookups · ${session ? "your session" : "no session"}`}
+                  Live lookups · {session ? "your session" : "no session"}
                 </span>
                 <span>
-                  {meta.mode === "live" && session ? (
+                  {session ? (
                     <>
                       <Wifi size={13} /> Session loaded
                     </>
-                  ) : meta.mode === "live" ? (
-                    <>
-                      <WifiOff size={13} /> Session needed
-                    </>
                   ) : (
                     <>
-                      <Sparkles size={13} /> Demo mode
+                      <WifiOff size={13} /> Session needed
                     </>
                   )}
                 </span>
@@ -272,7 +259,6 @@ export function Workspace({
           date={form.date}
           cls={form.cls}
           trainLabel={train.label}
-          mode={meta.mode}
           scanning={status === "scanning"}
           stopped={status === "stopped"}
           progress={progress}
@@ -303,7 +289,6 @@ interface ScanErrorPanelProps {
   session: Session | null;
   onOpenSession: () => void;
   onRescan: () => void;
-  onUseDemo: () => void;
   onUseClass: (cls: string) => void;
 }
 
@@ -312,7 +297,6 @@ function ScanErrorPanel({
   session,
   onOpenSession,
   onRescan,
-  onUseDemo,
   onUseClass,
 }: ScanErrorPanelProps) {
   const titles: Record<ScanFatalError["code"], string> = {
@@ -388,8 +372,8 @@ function ScanErrorPanel({
               <RotateCcw size={14} /> Try again
             </button>
           )}
-          <button type="button" className="button button--small button--ghost-dark" onClick={onUseDemo}>
-            <Play size={13} /> Use demo instead
+          <button type="button" className="button button--small button--ghost-dark" onClick={onRescan}>
+            <RotateCcw size={13} /> Try again
           </button>
           {session && error.code === "auth" && (
             <span className="scan-error-panel__hint">The old token is still loaded until you replace it.</span>

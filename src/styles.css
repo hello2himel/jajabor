@@ -456,56 +456,6 @@ svg {
   gap: 10px;
 }
 
-.mode-switch {
-  display: inline-flex;
-  padding: 3px;
-  border-radius: 9px;
-  background: var(--paper-3);
-  border: 1px solid var(--line);
-}
-
-.mode-switch button {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  border: 0;
-  background: transparent;
-  color: var(--muted);
-  border-radius: 6px;
-  padding: 6px 10px;
-  font-size: 11px;
-  font-weight: 700;
-  transition: 0.18s;
-}
-
-.mode-switch button:hover {
-  color: var(--ink);
-}
-
-.mode-switch button.is-active {
-  background: var(--card);
-  color: var(--ink);
-  box-shadow: var(--shadow-sm);
-}
-
-.mode-switch--header {
-  background: rgba(247, 242, 231, 0.07);
-  border-color: rgba(247, 242, 231, 0.12);
-}
-
-.mode-switch--header button {
-  color: rgba(247, 242, 231, 0.58);
-}
-
-.mode-switch--header button:hover {
-  color: var(--paper);
-}
-
-.mode-switch--header button.is-active {
-  background: rgba(247, 242, 231, 0.94);
-  color: var(--ink);
-}
-
 .header-session {
   display: inline-flex;
   align-items: center;
@@ -976,12 +926,6 @@ svg {
   color: var(--ink);
 }
 
-.session-chip--demo {
-  background: var(--amber-soft);
-  border-color: rgba(233, 154, 46, 0.25);
-  color: #8a5a10;
-}
-
 .session-chip--good {
   background: var(--green-soft);
   border-color: rgba(11, 107, 70, 0.2);
@@ -995,9 +939,9 @@ svg {
 }
 
 .session-chip--warn {
-  background: var(--red-soft);
-  border-color: rgba(184, 73, 53, 0.15);
-  color: var(--red);
+  background: var(--amber-soft);
+  border-color: rgba(233, 154, 46, 0.25);
+  color: #8a5a10;
 }
 
 .search-grid {
@@ -2068,12 +2012,6 @@ input[type="date"] {
   background: var(--green-soft);
   border-color: rgba(11, 107, 70, 0.18);
   color: var(--green);
-}
-
-.workspace__chips > span.chip-demo {
-  background: var(--amber-soft);
-  border-color: rgba(233, 154, 46, 0.22);
-  color: #8a5a10;
 }
 
 .workspace__actions {
@@ -4782,10 +4720,6 @@ input[type="date"] {
     display: none;
   }
 
-  .mode-switch--header button {
-    padding: 6px 7px;
-  }
-
   .hero {
     padding: 52px 0 124px;
   }
@@ -5087,10 +5021,6 @@ input[type="date"] {
 }
 
 @media (max-width: 460px) {
-  .mode-switch--header {
-    display: none;
-  }
-
   .hero h1 {
     font-size: 43px;
   }

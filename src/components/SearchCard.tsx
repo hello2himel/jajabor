@@ -10,14 +10,13 @@ import {
   Minus,
   Plus,
   Settings2,
-  Sparkles,
   Ticket,
   TrainFront,
   Wifi,
   WifiOff,
   Zap,
 } from "lucide-react";
-import type { AppData, FormState, Mode, Session } from "../types";
+import type { AppData, FormState, Session } from "../types";
 import { SPEED_MS } from "../types";
 import { ClassPicker } from "./ClassPicker";
 import { Combobox } from "./Combobox";
@@ -37,13 +36,11 @@ import {
 interface SearchCardProps {
   data: AppData;
   form: FormState;
-  mode: Mode;
   session: Session | null;
   sessionOnline: boolean | null;
   scanning: boolean;
   onFormChange: (patch: Partial<FormState>) => void;
   onTrainChange: (number: string) => void;
-  onModeChange: (mode: Mode) => void;
   onOpenSession: () => void;
   onScan: () => void;
   onSwap: () => void;
@@ -54,13 +51,11 @@ const DAY_ORDER = ["Fri", "Sat", "Sun", "Mon", "Tue", "Wed", "Thu"];
 export function SearchCard({
   data,
   form,
-  mode,
   session,
   sessionOnline,
   scanning,
   onFormChange,
   onTrainChange,
-  onModeChange,
   onOpenSession,
   onScan,
   onSwap,
@@ -69,7 +64,7 @@ export function SearchCard({
   const { train, route, stops, fi, ti, directionValid, stationsValid, runsOnDate } = selection;
   const tokenInfo = session?.token ? decodeToken(session.token) : null;
   const pairCount = selection.pairCount;
-  const estimateSeconds = mode === "demo" ? 2 : Math.ceil((pairCount * SPEED_MS[form.speed]) / 1000);
+  const estimateSeconds = Math.ceil((pairCount * SPEED_MS[form.speed]) / 2000);
   const bookingMax = bookingLimitISO();
   const dateInWindow = form.date >= todayISO() && form.date <= bookingMax;
 
@@ -101,18 +96,15 @@ export function SearchCard({
   const fromNotSellable = fromStop && !fromStop.sellable;
   const toNotSellable = toStop && !toStop.sellable;
 
-  const sessionLabel =
-    mode === "demo"
-      ? "Sample availability"
-      : tokenInfo?.expired
-        ? "Live · session expired"
-        : session
-          ? sessionOnline === false
-            ? "Proxy offline"
-            : sessionOnline === true
-              ? "Live · connected"
-              : "Live · session loaded"
-          : "Live · connect session";
+  const sessionLabel = tokenInfo?.expired
+    ? "Live · session expired"
+    : session
+      ? sessionOnline === false
+        ? "Proxy offline"
+        : sessionOnline === true
+          ? "Live · connected"
+          : "Live · session loaded"
+      : "Live · connect session";
 
   return (
     <section className="search-card" id="search" aria-labelledby="search-heading">
@@ -122,40 +114,16 @@ export function SearchCard({
           <h2 id="search-heading">Where are you going?</h2>
         </div>
         <div className="search-card__controls">
-          <div className="mode-switch" role="tablist" aria-label="Availability source">
-            <button
-              type="button"
-              role="tab"
-              aria-selected={mode === "demo"}
-              className={mode === "demo" ? "is-active" : ""}
-              onClick={() => onModeChange("demo")}
-              title="Explore with realistic sample availability"
-            >
-              <Sparkles size={13} /> Demo
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={mode === "live"}
-              className={mode === "live" ? "is-active" : ""}
-              onClick={() => onModeChange("live")}
-              title="Check live seats with your own railway session"
-            >
-              <Wifi size={13} /> Live
-            </button>
-          </div>
           <button
             type="button"
             className={`session-chip ${
-              mode === "demo"
-                ? "session-chip--demo"
-                : tokenInfo?.expired
-                  ? "session-chip--bad"
-                  : session
-                    ? sessionOnline === false
-                      ? "session-chip--bad"
-                      : "session-chip--good"
-                    : "session-chip--warn"
+              tokenInfo?.expired
+                ? "session-chip--bad"
+                : session
+                  ? sessionOnline === false
+                    ? "session-chip--bad"
+                    : "session-chip--good"
+                  : "session-chip--warn"
             }`}
             onClick={onOpenSession}
             title={
@@ -164,9 +132,7 @@ export function SearchCard({
                 : "Open session settings"
             }
           >
-            {mode === "demo" ? (
-              <Sparkles size={13} />
-            ) : session ? (
+            {session ? (
               sessionOnline === false ? (
                 <WifiOff size={13} />
               ) : (
@@ -305,6 +271,10 @@ export function SearchCard({
               <>
                 <span className="scan-button__pulse" aria-hidden /> Scanning…
               </>
+            ) : !session || tokenInfo?.expired ? (
+              <>
+                <KeyRound size={16} /> {tokenInfo?.expired ? "Refresh session to scan" : "Connect session to scan"}
+              </>
             ) : (
               <>
                 Find split tickets <ArrowRight size={18} />
@@ -364,8 +334,6 @@ export function SearchCard({
           <Clock3 size={14} />
           {selection.pairCount === 0 ? (
             <span>No station pairs to check yet</span>
-          ) : mode === "demo" ? (
-            <span>{selection.pairCount} sample pairs · instant</span>
           ) : (
             <span>
               {selection.pairCount} pairs · about{" "}

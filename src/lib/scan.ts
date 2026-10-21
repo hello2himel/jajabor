@@ -2,7 +2,7 @@ import type { PairInfo, Session } from "../types";
 import { SPEED_MS } from "../types";
 import { ApiError, analyseTrain, searchTrips } from "./api";
 import { PairCache, pairCacheKey } from "./cache";
-import { demoPair, scanPairs } from "./engine";
+import { scanPairs } from "./engine";
 
 export type ScanFatalCode = "auth" | "proxy" | "not-running" | "class-missing";
 
@@ -57,8 +57,6 @@ export interface LiveScanOptions extends BaseScanOptions, ScanCallbacks {
   session: Session;
   apiBase: string;
 }
-
-export interface DemoScanOptions extends BaseScanOptions, ScanCallbacks {}
 
 function abortableSleep(ms: number, signal: AbortSignal): Promise<void> {
   return new Promise((resolve) => {
@@ -254,62 +252,4 @@ export async function runLiveScan(
     errors,
     cached: cachedCount,
   };
-}
-
-export async function runDemoScan(
-  options: DemoScanOptions,
-): Promise<{ aborted: boolean }> {
-  const pairs = scanPairs(
-    options.stopNames.length,
-    options.sellable,
-    options.fi,
-    options.ti,
-    options.deep,
-  );
-  const controller = makeController(options.signal);
-  const total = pairs.length;
-  let done = 0;
-  let errors = 0;
-  const waves = 18;
-  const chunk = Math.max(1, Math.ceil(total / waves));
-  const stops = options.stopNames.map((name) => ({
-    name,
-    arrival: null,
-    departure: null,
-    halt: null,
-    duration: null,
-    sellable: true,
-  }));
-  options.onProgress({ done: 0, total, current: "", errors: 0, cached: 0 });
-
-  for (let index = 0; index < pairs.length; index++) {
-    if (controller.signal.aborted) return { aborted: true };
-    const [i, j] = pairs[index];
-    if (options.sellable[i] && options.sellable[j]) {
-      const info = demoPair(
-        options.trainNumber,
-        options.date,
-        options.cls,
-        stops,
-        i,
-        j,
-        options.fi,
-        options.ti,
-      );
-      options.onPair(i, j, info);
-    }
-    done++;
-    if (index % chunk === 0 || index === pairs.length - 1) {
-      options.onProgress({
-        done,
-        total,
-        current: `${options.stopNames[i]} → ${options.stopNames[j]}`,
-        errors,
-        cached: 0,
-      });
-      await abortableSleep(70, controller.signal);
-    }
-  }
-
-  return { aborted: controller.signal.aborted };
 }

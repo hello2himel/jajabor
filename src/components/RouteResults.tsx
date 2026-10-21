@@ -16,7 +16,7 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import type { Counts, FoundRoute, Mode, Stop } from "../types";
+import type { Counts, FoundRoute, Stop } from "../types";
 import { CLASS_BY_CODE } from "../types";
 import { pairKey, routeLabel, routeToText, ticketTiming } from "../lib/engine";
 import {
@@ -39,7 +39,6 @@ interface RouteResultsProps {
   date: string;
   cls: string;
   trainLabel: string;
-  mode: Mode;
   scanning: boolean;
   stopped: boolean;
   progress: ScanProgress;
@@ -59,7 +58,6 @@ export function RouteResults({
   date,
   cls,
   trainLabel,
-  mode,
   scanning,
   stopped,
   progress,
@@ -221,9 +219,7 @@ export function RouteResults({
           ) : (
             <>
               <strong>—</strong>
-              <small>
-                {mode === "demo" ? "Sample availability" : "No route found"}
-              </small>
+              <small>No route found</small>
             </>
           )}
         </div>
@@ -234,8 +230,7 @@ export function RouteResults({
           </span>
           <strong>{filtered.length.toLocaleString("en-IN")}</strong>
           <small>
-            {mode === "demo" ? "Simulated seats · " : "Live lookups · "}
-            {progress.done}/{progress.total} pairs
+            Live lookups · {progress.done}/{progress.total} pairs
           </small>
         </div>
       </div>

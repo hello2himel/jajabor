@@ -137,7 +137,7 @@ const FAQS = [
   },
   {
     q: "Do I need an account?",
-    a: "Not for demo mode. For live seat counts you connect your own railway session — Jajabor never asks for your password. The session token stays in your browser and is sent only to your proxy and the railway API.",
+    a: "Yes. Live seat counts need an active railway session. You log in on the official site, then connect that session to Jajabor — it never asks for your password or OTP. The token stays in your browser and is sent only to your proxy and the railway API.",
   },
   {
     q: "What is a no-ticket hop?",
@@ -153,7 +153,7 @@ const FAQS = [
   },
   {
     q: "How fresh is the availability?",
-    a: "Seat counts are requested live during a scan and cached for a short time to avoid hammering the railway. Timetable and station data are bundled with the app. Demo availability is simulated and clearly labelled.",
+    a: "Seat counts are requested live during a scan and cached for a short time to avoid hammering the railway. Timetable and station data are bundled with the app. Availability can change while you book.",
   },
   {
     q: "Is my session token safe?",
@@ -169,8 +169,8 @@ export function FAQ() {
           <span className="eyebrow eyebrow--dark">Good to know</span>
           <h2>Questions, answered.</h2>
           <p>
-            The short version: Jajabor finds combinations; you book on the official site. Demo is
-            simulated; live uses your own session.
+            The short version: Jajabor finds combinations; you book on the official site. Live
+            seats use your own railway session.
           </p>
           <a
             className="text-link"

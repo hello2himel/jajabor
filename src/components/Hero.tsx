@@ -36,7 +36,7 @@ export function Hero({ onStart, onHow, trainCount, stationCount }: HeroProps) {
           </div>
           <div className="hero__note">
             <Ticket size={14} />
-            Demo works instantly. Live seats use your own railway session.
+            Live availability. Bring your own railway session — no password stored.
           </div>
         </div>
 

@@ -1,7 +1,7 @@
 # Netlify — Jajabor
 #
 # Static Vite frontend plus serverless API functions replacing the local
-# Express proxy. Live mode is same-origin on Netlify:
+# Express proxy. Live scanning is same-origin on Netlify:
 #   /api/search, /api/train-route, /api/handshake, /api/health
 #
 # netlify.toml sets VITE_PROXY_SAME_ORIGIN so the browser calls its own origin

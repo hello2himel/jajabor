@@ -1,33 +1,28 @@
-import { Github, KeyRound, Sparkles, Wifi, WifiOff } from "lucide-react";
-import type { Mode, Session } from "../types";
+import { Github, KeyRound } from "lucide-react";
+import type { Session } from "../types";
 import { decodeToken } from "../lib/session";
 
 interface HeaderProps {
-  mode: Mode;
   session: Session | null;
   sessionOnline: boolean | null;
-  onModeChange: (mode: Mode) => void;
   onOpenSession: () => void;
   onHome: () => void;
 }
 
 export function Header({
-  mode,
   session,
   sessionOnline,
-  onModeChange,
   onOpenSession,
   onHome,
 }: HeaderProps) {
   const sessionExpired = Boolean(session?.token && decodeToken(session.token).expired);
-  const sessionButtonLabel =
-    mode === "demo"
-      ? "Session"
-      : sessionExpired
-        ? "Refresh"
-        : session
-          ? "Connected"
-          : "Connect";
+  const sessionButtonLabel = sessionExpired
+    ? "Refresh"
+    : session
+      ? sessionOnline === false
+        ? "Offline"
+        : "Connected"
+      : "Connect";
   return (
     <header className="site-header">
       <div className="container site-header__inner">
@@ -47,27 +42,6 @@ export function Header({
         </nav>
 
         <div className="site-header__actions">
-          <div className="mode-switch mode-switch--header" role="tablist" aria-label="Availability source">
-            <button
-              type="button"
-              role="tab"
-              aria-selected={mode === "demo"}
-              className={mode === "demo" ? "is-active" : ""}
-              onClick={() => onModeChange("demo")}
-            >
-              <Sparkles size={12} /> Demo
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={mode === "live"}
-              className={mode === "live" ? "is-active" : ""}
-              onClick={() => onModeChange("live")}
-            >
-              {session ? <Wifi size={12} /> : <WifiOff size={12} />} Live
-            </button>
-          </div>
-
           <button
             type="button"
             className={`header-session ${session ? "has-session" : ""} ${
