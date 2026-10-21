@@ -5,7 +5,6 @@ import type {
   Counts,
   FormState,
   FoundRoute,
-  Mode,
   ScanSpeed,
   Session,
 } from "./types";
@@ -22,7 +21,7 @@ import {
   trainRunsOn,
 } from "./lib/format";
 import { getSelection, resolveTrain } from "./lib/selection";
-import { runDemoScan, runLiveScan, ScanFatalError, type ScanProgress } from "./lib/scan";
+import { runLiveScan, ScanFatalError, type ScanProgress } from "./lib/scan";
 import { apiErrorMessage, resolveApiBase, apiHealth } from "./lib/api";
 import { clearSession, decodeToken, loadSession, saveSession } from "./lib/session";
 import { scrollIntoView } from "./lib/hooks";
@@ -58,11 +57,6 @@ function baseForm(): FormState {
     speed: "balanced",
     deep: false,
   };
-}
-
-function readModeParam(): Mode {
-  if (typeof window === "undefined") return "demo";
-  return new URLSearchParams(window.location.search).get("mode") === "live" ? "live" : "demo";
 }
 
 function initialForm(data: AppData, base: FormState): FormState {
@@ -126,7 +120,6 @@ export default function App() {
   const [loadError, setLoadError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
   const [form, setForm] = useState<FormState>(baseForm);
-  const [mode, setMode] = useState<Mode>(readModeParam);
   const [session, setSession] = useState<Session | null>(() => loadSession());
   const [sessionOnline, setSessionOnline] = useState<boolean | null>(null);
   const [sessionOpen, setSessionOpen] = useState(false);
@@ -256,21 +249,6 @@ export default function App() {
     setForm((current) => ({ ...current, from: current.to, to: current.from }));
   }
 
-  function handleModeChange(next: Mode) {
-    setMode(next);
-    if (next === "live") {
-      const expired = Boolean(session?.token && decodeToken(session.token).expired);
-      if (!session?.token || expired) {
-        setSessionError(
-          expired
-            ? "That railway session has expired. Log in again and paste a fresh session to scan live."
-            : null,
-        );
-        setSessionOpen(true);
-      }
-    }
-  }
-
   function openSession(message?: string) {
     setSessionError(message || null);
     setSessionOpen(true);
@@ -279,21 +257,19 @@ export default function App() {
   function handleSaveSession(value: Session) {
     setSession(value);
     saveSession(value);
-    setMode("live");
     setSessionOpen(false);
     setSessionError(null);
-    showToast("Session saved. Live mode is ready.", "success");
+    showToast("Session saved. You're ready to scan live.", "success");
   }
 
   function handleClearSession() {
     clearSession();
     setSession(null);
     setSessionOnline(null);
-    setMode("demo");
-    showToast("Session removed. Back to demo mode.", "info");
+    showToast("Session removed. Connect again to scan live.", "info");
   }
 
-  function writeUrl(meta: ScanMeta, scanMode: Mode) {
+  function writeUrl(meta: ScanMeta) {
     const params = new URLSearchParams();
     params.set("train", meta.train.number);
     params.set("from", prettyStation(meta.route.stops[meta.fi].name));
@@ -302,15 +278,13 @@ export default function App() {
     params.set("class", meta.form.cls);
     params.set("gap", String(meta.form.gap));
     params.set("speed", meta.form.speed);
-    params.set("mode", scanMode);
     if (meta.form.deep) params.set("deep", "1");
     const next = `${window.location.pathname}?${params.toString()}`;
     window.history.replaceState(null, "", next);
   }
 
-  async function startScan(overrideMode?: Mode) {
+  async function startScan() {
     if (!data || scanStatus === "scanning") return;
-    const scanMode = overrideMode || mode;
     const current = getSelection(data, form);
 
     if (!current.train) {
@@ -358,18 +332,15 @@ export default function App() {
       showToast("No sellable station pairs around this trip. Try another class or trip.", "error");
       return;
     }
-    if (scanMode === "live" && !session?.token) {
-      openSession("Live mode needs a railway session. Connect one, or switch to demo.");
+    if (!session?.token) {
+      openSession("Live seat checks need your own railway session. Connect one to start scanning.");
       return;
     }
-    if (scanMode === "live" && session?.token) {
-      const token = decodeToken(session.token);
-      if (token.expired) {
-        openSession(
-          "That railway session has expired. Log in again and paste a fresh session to scan live.",
-        );
-        return;
-      }
+    if (decodeToken(session.token).expired) {
+      openSession(
+        "That railway session has expired. Log in again and paste a fresh session to scan live.",
+      );
+      return;
     }
     if (!current.stops[current.fi].sellable || !current.stops[current.ti].sellable) {
       showToast(
@@ -400,7 +371,6 @@ export default function App() {
       fi: current.fi,
       ti: current.ti,
       startedAt: Date.now(),
-      mode: scanMode,
       pairTotal: current.pairCount,
     };
 
@@ -410,8 +380,7 @@ export default function App() {
     setProgress({ ...EMPTY_PROGRESS, total: current.pairCount });
     setScanError(null);
     setScanStatus("scanning");
-    setMode(scanMode);
-    writeUrl(meta, scanMode);
+    writeUrl(meta);
     scrollIntoView("workspace");
 
     const onPair = (i: number, j: number, info: Counts[string]) => {
@@ -420,41 +389,23 @@ export default function App() {
     const onProgress = (next: ScanProgress) => setProgress(next);
 
     try {
-      if (scanMode === "demo") {
-        await runDemoScan({
-          trainNumber: current.train.number,
-          date: resolvedForm.date,
-          cls: resolvedForm.cls,
-          stopNames: current.stops.map((stop) => stop.name),
-          sellable: current.sellable,
-          fi: current.fi,
-          ti: current.ti,
-          gap: resolvedForm.gap,
-          deep: resolvedForm.deep,
-          speed: resolvedForm.speed,
-          signal: controller.signal,
-          onPair,
-          onProgress,
-        });
-      } else {
-        await runLiveScan({
-          trainNumber: current.train.number,
-          date: resolvedForm.date,
-          cls: resolvedForm.cls,
-          stopNames: current.stops.map((stop) => stop.name),
-          sellable: current.sellable,
-          fi: current.fi,
-          ti: current.ti,
-          gap: resolvedForm.gap,
-          deep: resolvedForm.deep,
-          speed: resolvedForm.speed,
-          signal: controller.signal,
-          session: session!,
-          apiBase: resolveApiBase(session),
-          onPair,
-          onProgress,
-        });
-      }
+      await runLiveScan({
+        trainNumber: current.train.number,
+        date: resolvedForm.date,
+        cls: resolvedForm.cls,
+        stopNames: current.stops.map((stop) => stop.name),
+        sellable: current.sellable,
+        fi: current.fi,
+        ti: current.ti,
+        gap: resolvedForm.gap,
+        deep: resolvedForm.deep,
+        speed: resolvedForm.speed,
+        signal: controller.signal,
+        session,
+        apiBase: resolveApiBase(session),
+        onPair,
+        onProgress,
+      });
 
       if (runId !== runIdRef.current) return;
       if (controller.signal.aborted) {
@@ -541,10 +492,8 @@ export default function App() {
   return (
     <>
       <Header
-        mode={mode}
         session={session}
         sessionOnline={sessionOnline}
-        onModeChange={handleModeChange}
         onOpenSession={() => openSession()}
         onHome={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       />
@@ -561,13 +510,11 @@ export default function App() {
           <SearchCard
             data={data}
             form={form}
-            mode={mode}
             session={session}
             sessionOnline={sessionOnline}
             scanning={scanStatus === "scanning"}
             onFormChange={handleFormChange}
             onTrainChange={handleTrainChange}
-            onModeChange={handleModeChange}
             onOpenSession={() => openSession()}
             onScan={() => void startScan()}
             onSwap={handleSwap}
@@ -593,10 +540,6 @@ export default function App() {
               setSessionOpen(true);
             }}
             onShare={() => void handleShare()}
-            onUseDemo={() => {
-              setMode("demo");
-              void startScan("demo");
-            }}
             onUseClass={useClass}
             onToast={showToast}
           />

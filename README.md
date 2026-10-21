@@ -2,7 +2,7 @@
 
 **The train is full. Your journey isn't.**
 
-[![Deploy demo to GitHub Pages](https://github.com/hello2himel/jajabor/actions/workflows/deploy.yml/badge.svg)](https://github.com/hello2himel/jajabor/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/hello2himel/jajabor/actions/workflows/deploy.yml/badge.svg)](https://github.com/hello2himel/jajabor/actions/workflows/deploy.yml)
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/hello2himel/jajabor)
 
 Jajabor is a split-ticket finder for Bangladesh Railway. It checks every useful
@@ -11,9 +11,12 @@ when the direct ticket is sold out.
 
 This is a web GUI reimagining of
 [TonmoyNaimur/split-ticket-finder](https://github.com/TonmoyNaimur/split-ticket-finder),
-with real timetable data, a playable demo, and an optional live mode.
+with real timetable data and live seat availability.
 
 ![Jajabor landing page](docs/hero.png)
+
+> Documentation screenshots use a test session with illustrative availability. The app itself
+> always checks live data through your connected railway session.
 
 ## Why split tickets?
 
@@ -35,26 +38,24 @@ stretches without a reserved seat.
   cheapest, or most seats.
 - **Shareable searches** — train, stations, date, class, and settings live in the
   URL.
-- **Demo mode** — deterministic sample availability, so the site is useful the
-  moment it loads.
-- **Live mode** — uses your own railway session through a same-origin proxy:
-  local Express or serverless Netlify Functions. No passwords, no OTPs, no
-  analytics.
+- **Live availability** — uses your own railway session through a same-origin
+  proxy: local Express or serverless Netlify Functions. No passwords, no OTPs,
+  no analytics.
 
 ![Scan results](docs/scan.png)
 
-## Try the demo
+## Use Jajabor
 
-**Hosted demo:** <https://hello2himel.github.io/jajabor/>
+**Hosted app:** <https://hello2himel.github.io/jajabor/>
+
+Jajabor is live-only. It needs an active railway session and a proxy to fetch
+seat availability. The hosted GitHub Pages build is static, so point it at a
+local proxy or deploy the included Netlify functions.
 
 Prefer your own deployment? Use the **Deploy to Netlify** button above; the
-repository includes both the static frontend and the live-mode serverless
-functions.
+repository includes both the static frontend and the live serverless functions.
 
-Demo availability is simulated. It is designed to be plausible — long,
-hub-to-hub and premium segments sell out more often, short segments stay
-available — but it is not live railway data.
-
+Seat counts are requested from the railway during a scan and change constantly.
 The timetable itself is real: **160 trains**, **263 stations**, and the complete
 stop list for every train, bundled as static JSON.
 
@@ -70,7 +71,8 @@ npm run live
 ```
 
 Open <http://localhost:8788>. This builds the frontend, starts the proxy, and
-serves both from one origin. Demo mode works immediately.
+serves both from one origin. The timetable loads immediately; connect your
+railway session to start scanning.
 
 For development:
 
@@ -89,7 +91,7 @@ forwards `/api` to the proxy.
 | Vite dev server | `5173` | `npm run dev:web -- --port 5174` |
 | Proxy used by Vite | `8788` | edit `vite.config.ts` |
 
-## Live mode
+## Live availability
 
 The search API only accepts requests from its own web origin, so a browser on a
 different domain can't call it directly. Jajabor ships two proxy backends that
@@ -179,9 +181,8 @@ HOST=0.0.0.0 ALLOWED_ORIGINS=https://hello2himel.github.io npm start
    journey. Tickets may start before you board or end after you alight — you
    simply board and leave at your own stops. The full-matrix option checks every
    sellable pair.
-3. **Ask for availability.** Demo mode generates deterministic samples. Live
-   mode calls the railway search API through the proxy, two requests at a time
-   with a configurable pause.
+3. **Ask for availability.** Jajabor calls the railway search API through the
+   proxy, two requests at a time with a configurable pause.
 4. **Stitch and rank.** A DFS combines available pairs, allowing up to the
    chosen number of unticketed hops. Results are ranked by gaps, tickets, extra
    distance, seats on the tightest leg, and fare.
@@ -203,8 +204,7 @@ page never runs sideways.
 - 12 route stops are not present in the station handshake (for example
   `Jamalganj`, `Kushtia`, `Goalanda_Ghat`). They are marked "no online ticket
   sales" and never used as ticket endpoints.
-- Demo fares are estimates derived from distance and class. Live fares come from
-  the API response.
+- Fare and seat counts come from the API response.
 - Availability changes constantly. Always confirm on the official site before
   paying.
 
@@ -215,8 +215,8 @@ src/
   App.tsx                 state, scan orchestration, URL sync
   components/             search, workspace, matrix, results, modal, marketing
   lib/
-    engine.ts             split-route DFS, pair selection, demo availability
-    scan.ts               live/demo scan runners with progress and retries
+    engine.ts             split-route DFS and pair selection
+    scan.ts               live scan runner with progress and retries
     api.ts                railway API client and auth headers
     selection.ts          train/stop resolution
     format.ts             dates, times, fares
@@ -267,9 +267,8 @@ Optional Netlify environment variables:
 | `UPSTREAM_TIMEOUT_MS` | Upstream timeout for functions (default `8000`) |
 | `ALLOW_ANY_ORIGIN` | Set to `true` only if you intentionally want an open proxy |
 
-Demo mode works on any Netlify plan. Live mode uses the deployment's functions,
-so visitors still only need to paste their own railway session — no local server
-is required.
+Jajabor is live-only, so every visitor needs their own railway session. The
+deployment's functions handle the proxy, so no local server is required.
 
 To point another static frontend at these functions, paste the Netlify site's
 origin into Jajabor's proxy field and add the frontend origin to
@@ -283,11 +282,11 @@ npx netlify-cli dev
 
 The site is served on <http://localhost:8888>, with the functions behind `/api/*`.
 
-## Deploying the GitHub Pages demo
+## Deploying to GitHub Pages
 
 The included GitHub Actions workflow builds with `BASE_PATH=/jajabor/` and
-publishes `dist/` to GitHub Pages. That hosted demo is static; live mode still
-requires the local proxy. For Netlify, the serverless functions are included
+publishes `dist/` to GitHub Pages. That hosted build is static; live scanning
+still requires a proxy. For Netlify, the serverless functions are included
 automatically — see the Netlify configuration above.
 
 To build for a different Pages path:
@@ -298,8 +297,8 @@ BASE_PATH=/your-repo/ npm run build
 
 ## Limitations
 
-- Live mode requires a proxy — Netlify Functions or the local Express server —
-  and a valid railway session.
+- Live scanning requires a proxy — Netlify Functions or the local Express server
+  — and a valid railway session.
 - The railway API is unofficial and can change without notice.
 - A no-ticket hop means exactly that: no reserved seat for that stretch. Check
   local rules and availability before travelling.

@@ -204,7 +204,7 @@ export function SessionModal({
       >
         <div className="modal__head">
           <div>
-            <span className="eyebrow eyebrow--dark">Live mode</span>
+            <span className="eyebrow eyebrow--dark">Live availability</span>
             <h2 id="session-title">Connect your railway session</h2>
           </div>
           <button type="button" className="icon-button" onClick={onClose} aria-label="Close">
@@ -470,7 +470,7 @@ export function SessionModal({
               disabled={!parsed || saving}
             >
               {saving ? <Loader2 size={15} className="spin" /> : <KeyRound size={15} />}
-              Save &amp; use live
+              Save session
             </button>
           </div>
         </div>

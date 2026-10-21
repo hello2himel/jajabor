@@ -1,5 +1,4 @@
 import type { Counts, FoundRoute, Segment, Stop } from "../types";
-import { CLASS_BY_CODE } from "../types";
 
 export function pairKey(i: number, j: number): string {
   return `${i},${j}`;
@@ -147,89 +146,6 @@ export function ticketTiming(stops: Stop[], a: number, b: number): TicketTiming 
     departure: stops[a]?.departure || stops[a]?.arrival || null,
     arrival: stops[b]?.arrival || stops[b]?.departure || null,
   };
-}
-
-export function estimateFare(stops: Stop[], i: number, j: number, cls: string): number {
-  const seat = CLASS_BY_CODE[cls];
-  const factor = seat?.factor ?? 1;
-  const distance = Math.max(1, j - i);
-  const routeScale = 1 + stops.length * 0.004;
-  return Math.max(15, Math.round((distance * 21 + 12) * factor * routeScale));
-}
-
-const HUBS = new Set(
-  [
-    "Dhaka",
-    "Chattogram",
-    "Sylhet",
-    "Rajshahi",
-    "Khulna",
-    "Rangpur",
-    "Dinajpur",
-    "Mymensingh",
-    "Cumilla",
-    "Cox's Bazar",
-    "Bogura",
-    "Jashore",
-    "Narayanganj",
-    "Parbatipur",
-    "Santahar",
-    "Tongi",
-  ].map((s) => s.toLowerCase()),
-);
-
-function hashString(input: string): number {
-  let hash = 2_166_136_261;
-  for (let i = 0; i < input.length; i++) {
-    hash ^= input.charCodeAt(i);
-    hash = Math.imul(hash, 16_777_619);
-  }
-  return hash >>> 0;
-}
-
-function mulberry32(seed: number): () => number {
-  let a = seed;
-  return () => {
-    a |= 0;
-    a = (a + 0x6d2b79f5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4_294_967_296;
-  };
-}
-
-/**
- * Deterministic, plausible sample availability. Long, hub-to-hub and premium
- * segments sell out more often; short segments stay available — which is the
- * exact situation split ticketing is for.
- */
-export function demoPair(
-  trainNumber: string,
-  date: string,
-  cls: string,
-  stops: Stop[],
-  i: number,
-  j: number,
-  fi: number,
-  ti: number,
-  directBias = true,
-): { online: number; offline: number; fare: number } {
-  const rnd = mulberry32(hashString(`${trainNumber}|${date}|${cls}|${i}|${j}|jajabor`));
-  const span = j - i;
-  const tripSpan = Math.max(1, ti - fi);
-  const routeSpan = Math.max(1, stops.length - 1);
-  const hub = HUBS.has(stops[i].name.toLowerCase()) || HUBS.has(stops[j].name.toLowerCase());
-  let soldOutChance = 0.11 + (span / routeSpan) * 0.28 + (hub ? 0.1 : 0);
-  if (span >= tripSpan * 0.65) soldOutChance += 0.34;
-  if (span >= tripSpan * 0.9) soldOutChance += 0.14;
-  if (["AC_B", "AC_S", "SNIGDHA", "F_BERTH"].includes(cls)) soldOutChance += 0.06;
-  if (span <= Math.max(2, tripSpan * 0.22)) soldOutChance -= 0.12;
-  if (directBias && i === fi && j === ti) soldOutChance += 0.5;
-
-  const isSoldOut = rnd() < Math.min(0.93, Math.max(0.04, soldOutChance));
-  const online = isSoldOut ? 0 : 1 + Math.floor(Math.pow(rnd(), 1.65) * 27);
-  const offline = Math.floor(rnd() * 18);
-  return { online, offline, fare: estimateFare(stops, i, j, cls) };
 }
 
 export function routeToText(

@@ -50,7 +50,7 @@ app.use(compression());
 app.use(express.json({ limit: "32kb" }));
 
 /* ------------------------------------------------------------------ */
-/* CORS — the demo may be hosted anywhere while the proxy stays local. */
+/* CORS — the frontend may be hosted anywhere while the proxy stays local. */
 /* ------------------------------------------------------------------ */
 app.use((req, res, next) => {
   const origin = req.get("origin");

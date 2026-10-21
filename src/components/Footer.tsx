@@ -46,11 +46,11 @@ export function Footer() {
             Original extension
           </a>
           <a
-            href="https://github.com/hello2himel/jajabor#live-mode"
+            href="https://github.com/hello2himel/jajabor#live-availability"
             target="_blank"
             rel="noreferrer"
           >
-            Run live mode
+            Set up live access
           </a>
           <a
             href="https://github.com/hello2himel/jajabor#disclaimer"
@@ -65,8 +65,8 @@ export function Footer() {
           <h3>The fine print</h3>
           <p>
             Not affiliated with Bangladesh Railway or Shohoz. Availability can change the moment
-            you look away. Demo seats are simulated; live seats are checked with your own session.
-            Timetable snapshot: October 2026.
+            you look away. Seat counts are checked live with your own session. Timetable snapshot:
+            October 2026.
           </p>
           <div className="site-footer__meta">
             <span>
