@@ -1,0 +1,46 @@
+{
+  "name": "jajabor",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Split-ticket finder for Bangladesh Railway — find a seat even when the direct train is full.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hello2himel/jajabor.git"
+  },
+  "homepage": "https://hello2himel.github.io/jajabor/",
+  "keywords": [
+    "bangladesh-railway",
+    "split-ticketing",
+    "train",
+    "react",
+    "vite"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n web,api -c green,blue \"vite\" \"node --watch server/index.mjs\"",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "start": "node server/index.mjs",
+    "live": "npm run build && npm start",
+    "typecheck": "tsc --noEmit --pretty false"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^4.21.2",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.3",
+    "@types/react-dom": "^19.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.7"
+  }
+}

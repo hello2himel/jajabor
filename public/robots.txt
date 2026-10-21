@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Jajabor is a static split-ticket finder. The demo is fully crawlable.

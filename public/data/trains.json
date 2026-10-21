@@ -1,0 +1,2764 @@
+[
+ {
+  "number": "41",
+  "name": "Kanchon Intercity Commuter",
+  "label": "Kanchon Intercity Commuter (41)",
+  "origin": "Parbatipur",
+  "destination": "Panchagarh",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:20",
+  "stopCount": 18
+ },
+ {
+  "number": "42",
+  "name": "Kanchon Intercity Commuter",
+  "label": "Kanchon Intercity Commuter (42)",
+  "origin": "Panchagarh",
+  "destination": "Parbatipur",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:45",
+  "stopCount": 18
+ },
+ {
+  "number": "57",
+  "name": "Rajshahi Commuter",
+  "label": "Rajshahi Commuter (57)",
+  "origin": "Ishwardi",
+  "destination": "Rohanpur",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "04:10",
+  "stopCount": 14
+ },
+ {
+  "number": "58",
+  "name": "Rajshahi Commuter",
+  "label": "Rajshahi Commuter (58)",
+  "origin": "Rohanpur",
+  "destination": "Ishwardi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "03:30",
+  "stopCount": 13
+ },
+ {
+  "number": "61",
+  "name": "Lalmoni Commuter",
+  "label": "Lalmoni Commuter (61)",
+  "origin": "Lalmonirhat",
+  "destination": "Birol",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:00",
+  "stopCount": 13
+ },
+ {
+  "number": "62",
+  "name": "Lalmoni Commuter",
+  "label": "Lalmoni Commuter (62)",
+  "origin": "Birol",
+  "destination": "Lalmonirhat",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:00",
+  "stopCount": 13
+ },
+ {
+  "number": "65",
+  "name": "Burimari Commuter",
+  "label": "Burimari Commuter (65)",
+  "origin": "Lalmonirhat",
+  "destination": "Burimari",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "02:15",
+  "stopCount": 10
+ },
+ {
+  "number": "66",
+  "name": "Burimari Commuter",
+  "label": "Burimari Commuter (66)",
+  "origin": "Burimari",
+  "destination": "Lalmonirhat",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "02:10",
+  "stopCount": 10
+ },
+ {
+  "number": "77",
+  "name": "Rajshahi Commuter",
+  "label": "Rajshahi Commuter (77)",
+  "origin": "Rajshahi",
+  "destination": "Rohanpur",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "01:30",
+  "stopCount": 6
+ },
+ {
+  "number": "78",
+  "name": "Rajshahi Commuter",
+  "label": "Rajshahi Commuter (78)",
+  "origin": "Rohanpur",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "01:40",
+  "stopCount": 7
+ },
+ {
+  "number": "110",
+  "name": "Chapainawabganj Shuttle",
+  "label": "Chapainawabganj Shuttle (110)",
+  "origin": "Chapainawabganj",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed"
+  ],
+  "duration": "01:25",
+  "stopCount": 5
+ },
+ {
+  "number": "125",
+  "name": "Punarbhaba Commuter",
+  "label": "Punarbhaba Commuter (125)",
+  "origin": "Rajshahi",
+  "destination": "Rohanpur",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "02:20",
+  "stopCount": 10
+ },
+ {
+  "number": "126",
+  "name": "Punarbhaba Commuter",
+  "label": "Punarbhaba Commuter (126)",
+  "origin": "Rohanpur",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "02:20",
+  "stopCount": 6
+ },
+ {
+  "number": "127",
+  "name": "Mallika Commuter",
+  "label": "Mallika Commuter (127)",
+  "origin": "Rajshahi",
+  "destination": "Chapainawabganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "02:00",
+  "stopCount": 7
+ },
+ {
+  "number": "128",
+  "name": "Mallika Commuter",
+  "label": "Mallika Commuter (128)",
+  "origin": "Chapainawabganj",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "01:45",
+  "stopCount": 7
+ },
+ {
+  "number": "135",
+  "name": "Ovijatri Commuter",
+  "label": "Ovijatri Commuter (135)",
+  "origin": "Gopalganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:10",
+  "stopCount": 11
+ },
+ {
+  "number": "136",
+  "name": "Ovijatri Commuter",
+  "label": "Ovijatri Commuter (136)",
+  "origin": "Dhaka",
+  "destination": "Gopalganj",
+  "days": [
+   "Fri",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:15",
+  "stopCount": 11
+ },
+ {
+  "number": "137",
+  "name": "Goalanda Commuter1",
+  "label": "Goalanda Commuter1 (137)",
+  "origin": "Rajbari",
+  "destination": "Goalanda_Ghat",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 4
+ },
+ {
+  "number": "138",
+  "name": "Goalanda Commuter2",
+  "label": "Goalanda Commuter2 (138)",
+  "origin": "Goalanda_Ghat",
+  "destination": "Poradaha",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:45",
+  "stopCount": 16
+ },
+ {
+  "number": "139",
+  "name": "Goalanda Commuter3",
+  "label": "Goalanda Commuter3 (139)",
+  "origin": "Poradaha",
+  "destination": "Goalanda_Ghat",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:30",
+  "stopCount": 16
+ },
+ {
+  "number": "140",
+  "name": "Goalanda Commuter4",
+  "label": "Goalanda Commuter4 (140)",
+  "origin": "Goalanda_Ghat",
+  "destination": "Poradaha",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:25",
+  "stopCount": 16
+ },
+ {
+  "number": "701",
+  "name": "Suborno Express",
+  "label": "Suborno Express (701)",
+  "origin": "Chattogram",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:55",
+  "stopCount": 2
+ },
+ {
+  "number": "702",
+  "name": "Suborno Express",
+  "label": "Suborno Express (702)",
+  "origin": "Dhaka",
+  "destination": "Chattogram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:55",
+  "stopCount": 3
+ },
+ {
+  "number": "703",
+  "name": "Mahanagar Godhuli",
+  "label": "Mahanagar Godhuli (703)",
+  "origin": "Chattogram",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:45",
+  "stopCount": 10
+ },
+ {
+  "number": "704",
+  "name": "Mahanagar Provati",
+  "label": "Mahanagar Provati (704)",
+  "origin": "Dhaka",
+  "destination": "Chattogram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:50",
+  "stopCount": 12
+ },
+ {
+  "number": "705",
+  "name": "Ekota Express",
+  "label": "Ekota Express (705)",
+  "origin": "Dhaka",
+  "destination": "Panchagarh",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "10:45",
+  "stopCount": 24
+ },
+ {
+  "number": "706",
+  "name": "Ekota Express",
+  "label": "Ekota Express (706)",
+  "origin": "Panchagarh",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "10:10",
+  "stopCount": 21
+ },
+ {
+  "number": "707",
+  "name": "Tista Express",
+  "label": "Tista Express (707)",
+  "origin": "Dhaka",
+  "destination": "Dewanganj_Bazar",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:20",
+  "stopCount": 10
+ },
+ {
+  "number": "708",
+  "name": "Tista Express",
+  "label": "Tista Express (708)",
+  "origin": "Dewanganj_Bazar",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:30",
+  "stopCount": 10
+ },
+ {
+  "number": "709",
+  "name": "Parabat Express",
+  "label": "Parabat Express (709)",
+  "origin": "Dhaka",
+  "destination": "Sylhet",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:30",
+  "stopCount": 12
+ },
+ {
+  "number": "710",
+  "name": "Parabat Express",
+  "label": "Parabat Express (710)",
+  "origin": "Sylhet",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:40",
+  "stopCount": 12
+ },
+ {
+  "number": "711",
+  "name": "Upakul Express",
+  "label": "Upakul Express (711)",
+  "origin": "Noakhali",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed"
+  ],
+  "duration": "05:20",
+  "stopCount": 15
+ },
+ {
+  "number": "712",
+  "name": "Upakul Express",
+  "label": "Upakul Express (712)",
+  "origin": "Dhaka",
+  "destination": "Noakhali",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "05:30",
+  "stopCount": 16
+ },
+ {
+  "number": "713",
+  "name": "Korotoa Express",
+  "label": "Korotoa Express (713)",
+  "origin": "Santahar",
+  "destination": "Burimari",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "06:35",
+  "stopCount": 19
+ },
+ {
+  "number": "714",
+  "name": "Korotoa Express",
+  "label": "Korotoa Express (714)",
+  "origin": "Burimari",
+  "destination": "Santahar",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "06:20",
+  "stopCount": 19
+ },
+ {
+  "number": "715",
+  "name": "Kapotaksha Express",
+  "label": "Kapotaksha Express (715)",
+  "origin": "Khulna",
+  "destination": "Rajshahi",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:35",
+  "stopCount": 17
+ },
+ {
+  "number": "716",
+  "name": "Kapotaksha Express",
+  "label": "Kapotaksha Express (716)",
+  "origin": "Rajshahi",
+  "destination": "Khulna",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:55",
+  "stopCount": 16
+ },
+ {
+  "number": "717",
+  "name": "Jayentika Express",
+  "label": "Jayentika Express (717)",
+  "origin": "Dhaka",
+  "destination": "Sylhet",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "07:45",
+  "stopCount": 16
+ },
+ {
+  "number": "718",
+  "name": "Jayentika Express",
+  "label": "Jayentika Express (718)",
+  "origin": "Sylhet",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed"
+  ],
+  "duration": "07:15",
+  "stopCount": 16
+ },
+ {
+  "number": "719",
+  "name": "Paharika Express",
+  "label": "Paharika Express (719)",
+  "origin": "Chattogram",
+  "destination": "Sylhet",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "08:05",
+  "stopCount": 17
+ },
+ {
+  "number": "720",
+  "name": "Paharika Express",
+  "label": "Paharika Express (720)",
+  "origin": "Sylhet",
+  "destination": "Chattogram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "08:25",
+  "stopCount": 16
+ },
+ {
+  "number": "721",
+  "name": "Mohanagar Express",
+  "label": "Mohanagar Express (721)",
+  "origin": "Cox's Bazar",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:30",
+  "stopCount": 13
+ },
+ {
+  "number": "722",
+  "name": "Mohanagar Express",
+  "label": "Mohanagar Express (722)",
+  "origin": "Dhaka",
+  "destination": "Cox's Bazar",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:30",
+  "stopCount": 14
+ },
+ {
+  "number": "723",
+  "name": "Udayan Express",
+  "label": "Udayan Express (723)",
+  "origin": "Chattogram",
+  "destination": "Sylhet",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "08:00",
+  "stopCount": 11
+ },
+ {
+  "number": "724",
+  "name": "Udayan Express",
+  "label": "Udayan Express (724)",
+  "origin": "Sylhet",
+  "destination": "Chattogram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "07:35",
+  "stopCount": 12
+ },
+ {
+  "number": "725",
+  "name": "Sundarban Express",
+  "label": "Sundarban Express (725)",
+  "origin": "Khulna",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "07:25",
+  "stopCount": 17
+ },
+ {
+  "number": "726",
+  "name": "Sundarban Express",
+  "label": "Sundarban Express (726)",
+  "origin": "Dhaka",
+  "destination": "Khulna",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "07:40",
+  "stopCount": 17
+ },
+ {
+  "number": "727",
+  "name": "Rupsha Express",
+  "label": "Rupsha Express (727)",
+  "origin": "Khulna",
+  "destination": "Chilahati",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed"
+  ],
+  "duration": "09:45",
+  "stopCount": 24
+ },
+ {
+  "number": "728",
+  "name": "Rupsha Express",
+  "label": "Rupsha Express (728)",
+  "origin": "Chilahati",
+  "destination": "Khulna",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed"
+  ],
+  "duration": "09:55",
+  "stopCount": 24
+ },
+ {
+  "number": "729",
+  "name": "Meghna Express",
+  "label": "Meghna Express (729)",
+  "origin": "Chattogram",
+  "destination": "Chandpur",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:10",
+  "stopCount": 12
+ },
+ {
+  "number": "730",
+  "name": "Meghna Express",
+  "label": "Meghna Express (730)",
+  "origin": "Chandpur",
+  "destination": "Chattogram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:00",
+  "stopCount": 12
+ },
+ {
+  "number": "731",
+  "name": "Barendra Express",
+  "label": "Barendra Express (731)",
+  "origin": "Rajshahi",
+  "destination": "Chilahati",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:30",
+  "stopCount": 16
+ },
+ {
+  "number": "732",
+  "name": "Barendra Express",
+  "label": "Barendra Express (732)",
+  "origin": "Chilahati",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:10",
+  "stopCount": 17
+ },
+ {
+  "number": "733",
+  "name": "Titumir Express",
+  "label": "Titumir Express (733)",
+  "origin": "Rajshahi",
+  "destination": "Chilahati",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "06:40",
+  "stopCount": 18
+ },
+ {
+  "number": "734",
+  "name": "Titumir Express",
+  "label": "Titumir Express (734)",
+  "origin": "Chilahati",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "06:30",
+  "stopCount": 17
+ },
+ {
+  "number": "735",
+  "name": "Aghnibina Express",
+  "label": "Aghnibina Express (735)",
+  "origin": "Dhaka",
+  "destination": "Tarakandi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:30",
+  "stopCount": 9
+ },
+ {
+  "number": "736",
+  "name": "Aghnibina Express",
+  "label": "Aghnibina Express (736)",
+  "origin": "Tarakandi",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:25",
+  "stopCount": 9
+ },
+ {
+  "number": "737",
+  "name": "Egarosindhur Provati",
+  "label": "Egarosindhur Provati (737)",
+  "origin": "Dhaka",
+  "destination": "Kishorganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "03:55",
+  "stopCount": 11
+ },
+ {
+  "number": "738",
+  "name": "Egarosindhur Provati",
+  "label": "Egarosindhur Provati (738)",
+  "origin": "Kishorganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:05",
+  "stopCount": 11
+ },
+ {
+  "number": "739",
+  "name": "Upaban Express",
+  "label": "Upaban Express (739)",
+  "origin": "Dhaka",
+  "destination": "Sylhet",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "07:00",
+  "stopCount": 12
+ },
+ {
+  "number": "740",
+  "name": "Upaban Express",
+  "label": "Upaban Express (740)",
+  "origin": "Sylhet",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:10",
+  "stopCount": 12
+ },
+ {
+  "number": "741",
+  "name": "Turna",
+  "label": "Turna (741)",
+  "origin": "Chattogram",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:40",
+  "stopCount": 8
+ },
+ {
+  "number": "742",
+  "name": "Turna",
+  "label": "Turna (742)",
+  "origin": "Dhaka",
+  "destination": "Chattogram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:00",
+  "stopCount": 9
+ },
+ {
+  "number": "743",
+  "name": "Bhrammaputra Express",
+  "label": "Bhrammaputra Express (743)",
+  "origin": "Dhaka",
+  "destination": "Dewanganj_Bazar",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:35",
+  "stopCount": 12
+ },
+ {
+  "number": "744",
+  "name": "Bhrammaputra Express",
+  "label": "Bhrammaputra Express (744)",
+  "origin": "Dewanganj_Bazar",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:35",
+  "stopCount": 11
+ },
+ {
+  "number": "745",
+  "name": "Jamuna Express",
+  "label": "Jamuna Express (745)",
+  "origin": "Dhaka",
+  "destination": "Tarakandi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:45",
+  "stopCount": 13
+ },
+ {
+  "number": "746",
+  "name": "Jamuna Express",
+  "label": "Jamuna Express (746)",
+  "origin": "Tarakandi",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:00",
+  "stopCount": 13
+ },
+ {
+  "number": "747",
+  "name": "Simanta Express",
+  "label": "Simanta Express (747)",
+  "origin": "Khulna",
+  "destination": "Chilahati",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:30",
+  "stopCount": 23
+ },
+ {
+  "number": "748",
+  "name": "Simanta Express",
+  "label": "Simanta Express (748)",
+  "origin": "Chilahati",
+  "destination": "Khulna",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:40",
+  "stopCount": 23
+ },
+ {
+  "number": "749",
+  "name": "Egarosindhur Godhuli",
+  "label": "Egarosindhur Godhuli (749)",
+  "origin": "Dhaka",
+  "destination": "Kishorganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:55",
+  "stopCount": 11
+ },
+ {
+  "number": "750",
+  "name": "Egarosindhur Godhuli",
+  "label": "Egarosindhur Godhuli (750)",
+  "origin": "Kishorganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "03:55",
+  "stopCount": 11
+ },
+ {
+  "number": "751",
+  "name": "Lalmoni Express",
+  "label": "Lalmoni Express (751)",
+  "origin": "Dhaka",
+  "destination": "Lalmonirhat",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:35",
+  "stopCount": 20
+ },
+ {
+  "number": "752",
+  "name": "Lalmoni Express",
+  "label": "Lalmoni Express (752)",
+  "origin": "Lalmonirhat",
+  "destination": "Dhaka",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:55",
+  "stopCount": 19
+ },
+ {
+  "number": "753",
+  "name": "Silkcity Express",
+  "label": "Silkcity Express (753)",
+  "origin": "Dhaka",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:50",
+  "stopCount": 14
+ },
+ {
+  "number": "754",
+  "name": "Silkcity Express",
+  "label": "Silkcity Express (754)",
+  "origin": "Rajshahi",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:30",
+  "stopCount": 13
+ },
+ {
+  "number": "755",
+  "name": "Madhumati Express",
+  "label": "Madhumati Express (755)",
+  "origin": "Dhaka",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "07:30",
+  "stopCount": 23
+ },
+ {
+  "number": "756",
+  "name": "Madhumati Express",
+  "label": "Madhumati Express (756)",
+  "origin": "Rajshahi",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "07:20",
+  "stopCount": 23
+ },
+ {
+  "number": "757",
+  "name": "Drutojan Express",
+  "label": "Drutojan Express (757)",
+  "origin": "Dhaka",
+  "destination": "Panchagarh",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "10:25",
+  "stopCount": 24
+ },
+ {
+  "number": "758",
+  "name": "Drutojan Express",
+  "label": "Drutojan Express (758)",
+  "origin": "Panchagarh",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "11:35",
+  "stopCount": 24
+ },
+ {
+  "number": "759",
+  "name": "Padma Express",
+  "label": "Padma Express (759)",
+  "origin": "Dhaka",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:15",
+  "stopCount": 13
+ },
+ {
+  "number": "760",
+  "name": "Padma Express",
+  "label": "Padma Express (760)",
+  "origin": "Rajshahi",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:15",
+  "stopCount": 12
+ },
+ {
+  "number": "761",
+  "name": "Sagardari Express",
+  "label": "Sagardari Express (761)",
+  "origin": "Khulna",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:00",
+  "stopCount": 17
+ },
+ {
+  "number": "762",
+  "name": "Sagardari Express",
+  "label": "Sagardari Express (762)",
+  "origin": "Rajshahi",
+  "destination": "Khulna",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:10",
+  "stopCount": 17
+ },
+ {
+  "number": "763",
+  "name": "Chitra Express",
+  "label": "Chitra Express (763)",
+  "origin": "Khulna",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:05",
+  "stopCount": 21
+ },
+ {
+  "number": "764",
+  "name": "Chitra Express",
+  "label": "Chitra Express (764)",
+  "origin": "Dhaka",
+  "destination": "Khulna",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:10",
+  "stopCount": 19
+ },
+ {
+  "number": "765",
+  "name": "Nilsagar Express",
+  "label": "Nilsagar Express (765)",
+  "origin": "Dhaka",
+  "destination": "Chilahati",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "09:15",
+  "stopCount": 17
+ },
+ {
+  "number": "766",
+  "name": "Nilsagar Express",
+  "label": "Nilsagar Express (766)",
+  "origin": "Chilahati",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:25",
+  "stopCount": 16
+ },
+ {
+  "number": "767",
+  "name": "Dolonchapa Express",
+  "label": "Dolonchapa Express (767)",
+  "origin": "Santahar",
+  "destination": "Panchagarh",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:40",
+  "stopCount": 24
+ },
+ {
+  "number": "768",
+  "name": "Dolonchapa Express",
+  "label": "Dolonchapa Express (768)",
+  "origin": "Panchagarh",
+  "destination": "Santahar",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "10:15",
+  "stopCount": 24
+ },
+ {
+  "number": "769",
+  "name": "Dhumketu Express",
+  "label": "Dhumketu Express (769)",
+  "origin": "Dhaka",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed"
+  ],
+  "duration": "05:40",
+  "stopCount": 14
+ },
+ {
+  "number": "770",
+  "name": "Dhumketu Express",
+  "label": "Dhumketu Express (770)",
+  "origin": "Rajshahi",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "05:20",
+  "stopCount": 10
+ },
+ {
+  "number": "771",
+  "name": "Rangpur Express",
+  "label": "Rangpur Express (771)",
+  "origin": "Dhaka",
+  "destination": "Rangpur",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:50",
+  "stopCount": 16
+ },
+ {
+  "number": "772",
+  "name": "Rangpur Express",
+  "label": "Rangpur Express (772)",
+  "origin": "Rangpur",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "10:00",
+  "stopCount": 14
+ },
+ {
+  "number": "773",
+  "name": "Kalni Express",
+  "label": "Kalni Express (773)",
+  "origin": "Dhaka",
+  "destination": "Sylhet",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:35",
+  "stopCount": 11
+ },
+ {
+  "number": "774",
+  "name": "Kalni Express",
+  "label": "Kalni Express (774)",
+  "origin": "Sylhet",
+  "destination": "Dhaka",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:40",
+  "stopCount": 13
+ },
+ {
+  "number": "775",
+  "name": "Sirajganj Express",
+  "label": "Sirajganj Express (775)",
+  "origin": "Sirajganj_Bazar",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:15",
+  "stopCount": 12
+ },
+ {
+  "number": "776",
+  "name": "Sirajganj Express",
+  "label": "Sirajganj Express (776)",
+  "origin": "Dhaka",
+  "destination": "Sirajganj_Bazar",
+  "days": [
+   "Fri",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:55",
+  "stopCount": 10
+ },
+ {
+  "number": "777",
+  "name": "Hawr Express",
+  "label": "Hawr Express (777)",
+  "origin": "Dhaka",
+  "destination": "Mohanganj",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:55",
+  "stopCount": 11
+ },
+ {
+  "number": "778",
+  "name": "Hawr Express",
+  "label": "Hawr Express (778)",
+  "origin": "Mohanganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:55",
+  "stopCount": 11
+ },
+ {
+  "number": "779",
+  "name": "Dhalarchar Express",
+  "label": "Dhalarchar Express (779)",
+  "origin": "Dhalarchar",
+  "destination": "Chapainawabganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed"
+  ],
+  "duration": "05:20",
+  "stopCount": 12
+ },
+ {
+  "number": "780",
+  "name": "Dhalarchar Express",
+  "label": "Dhalarchar Express (780)",
+  "origin": "Rajshahi",
+  "destination": "Dhalarchar",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "03:55",
+  "stopCount": 17
+ },
+ {
+  "number": "781",
+  "name": "Kishorganj Express",
+  "label": "Kishorganj Express (781)",
+  "origin": "Dhaka",
+  "destination": "Kishorganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:40",
+  "stopCount": 11
+ },
+ {
+  "number": "782",
+  "name": "Kishorganj Express",
+  "label": "Kishorganj Express (782)",
+  "origin": "Kishorganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:00",
+  "stopCount": 11
+ },
+ {
+  "number": "783",
+  "name": "Tungipara Express",
+  "label": "Tungipara Express (783)",
+  "origin": "Gobra",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:45",
+  "stopCount": 19
+ },
+ {
+  "number": "784",
+  "name": "Tungipara Express",
+  "label": "Tungipara Express (784)",
+  "origin": "Rajshahi",
+  "destination": "Gobra",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:40",
+  "stopCount": 21
+ },
+ {
+  "number": "785",
+  "name": "Bijoy Express",
+  "label": "Bijoy Express (785)",
+  "origin": "Chattogram",
+  "destination": "Jamalpur_Town",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "08:45",
+  "stopCount": 14
+ },
+ {
+  "number": "786",
+  "name": "Bijoy Express",
+  "label": "Bijoy Express (786)",
+  "origin": "Jamalpur_Town",
+  "destination": "Chattogram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:00",
+  "stopCount": 14
+ },
+ {
+  "number": "787",
+  "name": "Sonar Bangla Express",
+  "label": "Sonar Bangla Express (787)",
+  "origin": "Chattogram",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "04:55",
+  "stopCount": 2
+ },
+ {
+  "number": "788",
+  "name": "Sonar Bangla Express",
+  "label": "Sonar Bangla Express (788)",
+  "origin": "Dhaka",
+  "destination": "Chattogram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed"
+  ],
+  "duration": "04:55",
+  "stopCount": 3
+ },
+ {
+  "number": "789",
+  "name": "Mohonganj Express",
+  "label": "Mohonganj Express (789)",
+  "origin": "Dhaka",
+  "destination": "Mohanganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "05:25",
+  "stopCount": 10
+ },
+ {
+  "number": "790",
+  "name": "Mohonganj Express",
+  "label": "Mohonganj Express (790)",
+  "origin": "Mohanganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "05:55",
+  "stopCount": 9
+ },
+ {
+  "number": "791",
+  "name": "Banalata Express",
+  "label": "Banalata Express (791)",
+  "origin": "Dhaka",
+  "destination": "Chapainawabganj",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:45",
+  "stopCount": 4
+ },
+ {
+  "number": "792",
+  "name": "Banalata Express",
+  "label": "Banalata Express (792)",
+  "origin": "Chapainawabganj",
+  "destination": "Dhaka",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "05:35",
+  "stopCount": 3
+ },
+ {
+  "number": "793",
+  "name": "Panchagarh Express",
+  "label": "Panchagarh Express (793)",
+  "origin": "Dhaka",
+  "destination": "Panchagarh",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "10:20",
+  "stopCount": 10
+ },
+ {
+  "number": "794",
+  "name": "Panchagarh Express",
+  "label": "Panchagarh Express (794)",
+  "origin": "Panchagarh",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "10:00",
+  "stopCount": 9
+ },
+ {
+  "number": "795",
+  "name": "Benapole Express",
+  "label": "Benapole Express (795)",
+  "origin": "Benapole",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "08:05",
+  "stopCount": 16
+ },
+ {
+  "number": "796",
+  "name": "Benapole Express",
+  "label": "Benapole Express (796)",
+  "origin": "Dhaka",
+  "destination": "Benapole",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "07:30",
+  "stopCount": 16
+ },
+ {
+  "number": "797",
+  "name": "Kurigram Express",
+  "label": "Kurigram Express (797)",
+  "origin": "Dhaka",
+  "destination": "Kurigram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:10",
+  "stopCount": 11
+ },
+ {
+  "number": "798",
+  "name": "Kurigram Express",
+  "label": "Kurigram Express (798)",
+  "origin": "Kurigram",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:55",
+  "stopCount": 10
+ },
+ {
+  "number": "799",
+  "name": "Jamalpur Express",
+  "label": "Jamalpur Express (799)",
+  "origin": "Dhaka",
+  "destination": "Bhuapur",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:45",
+  "stopCount": 15
+ },
+ {
+  "number": "800",
+  "name": "Jamalpur Express",
+  "label": "Jamalpur Express (800)",
+  "origin": "Bhuapur",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:40",
+  "stopCount": 14
+ },
+ {
+  "number": "801",
+  "name": "Chattala Express",
+  "label": "Chattala Express (801)",
+  "origin": "Chattogram",
+  "destination": "Dhaka",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:40",
+  "stopCount": 16
+ },
+ {
+  "number": "802",
+  "name": "Chattala Express",
+  "label": "Chattala Express (802)",
+  "origin": "Dhaka",
+  "destination": "Chattogram",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "06:15",
+  "stopCount": 16
+ },
+ {
+  "number": "803",
+  "name": "Banglabandha Express",
+  "label": "Banglabandha Express (803)",
+  "origin": "Rajshahi",
+  "destination": "Panchagarh",
+  "days": [
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "07:40",
+  "stopCount": 21
+ },
+ {
+  "number": "804",
+  "name": "Banglabandha Express",
+  "label": "Banglabandha Express (804)",
+  "origin": "Panchagarh",
+  "destination": "Rajshahi",
+  "days": [
+   "Fri",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "08:15",
+  "stopCount": 21
+ },
+ {
+  "number": "805",
+  "name": "Chilahati Express",
+  "label": "Chilahati Express (805)",
+  "origin": "Dhaka",
+  "destination": "Chilahati",
+  "days": [
+   "Fri",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:45",
+  "stopCount": 16
+ },
+ {
+  "number": "806",
+  "name": "Chilahati Express",
+  "label": "Chilahati Express (806)",
+  "origin": "Chilahati",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "08:55",
+  "stopCount": 15
+ },
+ {
+  "number": "809",
+  "name": "Burimari Express",
+  "label": "Burimari Express (809)",
+  "origin": "Dhaka",
+  "destination": "Burimari",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "13:15",
+  "stopCount": 18
+ },
+ {
+  "number": "810",
+  "name": "Burimari Express",
+  "label": "Burimari Express (810)",
+  "origin": "Lalmonirhat",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "09:20",
+  "stopCount": 16
+ },
+ {
+  "number": "813",
+  "name": "Coxs Bazar Express",
+  "label": "Coxs Bazar Express (813)",
+  "origin": "Cox's Bazar",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "08:30",
+  "stopCount": 3
+ },
+ {
+  "number": "814",
+  "name": "Coxs Bazar Express",
+  "label": "Coxs Bazar Express (814)",
+  "origin": "Dhaka",
+  "destination": "Cox's Bazar",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "08:20",
+  "stopCount": 4
+ },
+ {
+  "number": "815",
+  "name": "Parjotak Express",
+  "label": "Parjotak Express (815)",
+  "origin": "Cox's Bazar",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "08:35",
+  "stopCount": 3
+ },
+ {
+  "number": "816",
+  "name": "Parjotak Express",
+  "label": "Parjotak Express (816)",
+  "origin": "Dhaka",
+  "destination": "Cox's Bazar",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Thu"
+  ],
+  "duration": "08:25",
+  "stopCount": 4
+ },
+ {
+  "number": "821",
+  "name": "Shaikat Express",
+  "label": "Shaikat Express (821)",
+  "origin": "Chattogram",
+  "destination": "Cox's Bazar",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:35",
+  "stopCount": 11
+ },
+ {
+  "number": "822",
+  "name": "Probal Express",
+  "label": "Probal Express (822)",
+  "origin": "Cox's Bazar",
+  "destination": "Chattogram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "04:10",
+  "stopCount": 13
+ },
+ {
+  "number": "823",
+  "name": "Probal Express",
+  "label": "Probal Express (823)",
+  "origin": "Chattogram",
+  "destination": "Cox's Bazar",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:50",
+  "stopCount": 13
+ },
+ {
+  "number": "824",
+  "name": "Shaikat Express",
+  "label": "Shaikat Express (824)",
+  "origin": "Cox's Bazar",
+  "destination": "Chattogram",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:50",
+  "stopCount": 10
+ },
+ {
+  "number": "825",
+  "name": "Jahanabad Express",
+  "label": "Jahanabad Express (825)",
+  "origin": "Khulna",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:45",
+  "stopCount": 8
+ },
+ {
+  "number": "826",
+  "name": "Jahanabad Express",
+  "label": "Jahanabad Express (826)",
+  "origin": "Dhaka",
+  "destination": "Khulna",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:45",
+  "stopCount": 8
+ },
+ {
+  "number": "827",
+  "name": "Ruposhi Bangla Express",
+  "label": "Ruposhi Bangla Express (827)",
+  "origin": "Benapole",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:35",
+  "stopCount": 7
+ },
+ {
+  "number": "828",
+  "name": "Ruposhi Bangla Express",
+  "label": "Ruposhi Bangla Express (828)",
+  "origin": "Dhaka",
+  "destination": "Benapole",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "03:40",
+  "stopCount": 7
+ },
+ {
+  "number": "1001",
+  "name": "Narayanganj Commuter 1",
+  "label": "Narayanganj Commuter 1 (1001)",
+  "origin": "Narayanganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1002",
+  "name": "Narayanganj Commuter 2",
+  "label": "Narayanganj Commuter 2 (1002)",
+  "origin": "Dhaka",
+  "destination": "Narayanganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1003",
+  "name": "Narayanganj Commuter 3",
+  "label": "Narayanganj Commuter 3 (1003)",
+  "origin": "Narayanganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1004",
+  "name": "Narayanganj Commuter 4",
+  "label": "Narayanganj Commuter 4 (1004)",
+  "origin": "Dhaka",
+  "destination": "Narayanganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1005",
+  "name": "Narayanganj Commuter 5",
+  "label": "Narayanganj Commuter 5 (1005)",
+  "origin": "Narayanganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1006",
+  "name": "Narayanganj Commuter 6",
+  "label": "Narayanganj Commuter 6 (1006)",
+  "origin": "Dhaka",
+  "destination": "Narayanganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1007",
+  "name": "Narayanganj Commuter 7",
+  "label": "Narayanganj Commuter 7 (1007)",
+  "origin": "Narayanganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1008",
+  "name": "Narayanganj Commuter 8",
+  "label": "Narayanganj Commuter 8 (1008)",
+  "origin": "Dhaka",
+  "destination": "Narayanganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1009",
+  "name": "Narayanganj Commuter 9",
+  "label": "Narayanganj Commuter 9 (1009)",
+  "origin": "Narayanganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1010",
+  "name": "Narayanganj Commuter 10",
+  "label": "Narayanganj Commuter 10 (1010)",
+  "origin": "Dhaka",
+  "destination": "Narayanganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1011",
+  "name": "Narayanganj Commuter 11",
+  "label": "Narayanganj Commuter 11 (1011)",
+  "origin": "Narayanganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1012",
+  "name": "Narayanganj Commuter 12",
+  "label": "Narayanganj Commuter 12 (1012)",
+  "origin": "Dhaka",
+  "destination": "Narayanganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1013",
+  "name": "Narayanganj Commuter 13",
+  "label": "Narayanganj Commuter 13 (1013)",
+  "origin": "Narayanganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1014",
+  "name": "Narayanganj Commuter 14",
+  "label": "Narayanganj Commuter 14 (1014)",
+  "origin": "Dhaka",
+  "destination": "Narayanganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1015",
+  "name": "Narayanganj Commuter 15",
+  "label": "Narayanganj Commuter 15 (1015)",
+  "origin": "Narayanganj",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "1016",
+  "name": "Narayanganj Commuter 16",
+  "label": "Narayanganj Commuter 16 (1016)",
+  "origin": "Dhaka",
+  "destination": "Narayanganj",
+  "days": [
+   "Fri",
+   "Sat",
+   "Sun",
+   "Mon",
+   "Tue",
+   "Wed",
+   "Thu"
+  ],
+  "duration": "00:45",
+  "stopCount": 2
+ },
+ {
+  "number": "10001",
+  "name": "Tourist Special",
+  "label": "Tourist Special (10001)",
+  "origin": "Cox's Bazar",
+  "destination": "Dhaka",
+  "days": [
+   "Fri",
+   "Sat",
+   "Wed"
+  ],
+  "duration": "08:30",
+  "stopCount": 2
+ },
+ {
+  "number": "10002",
+  "name": "Tourist Special",
+  "label": "Tourist Special (10002)",
+  "origin": "Dhaka",
+  "destination": "Cox's Bazar",
+  "days": [
+   "Fri",
+   "Tue",
+   "Wed"
+  ],
+  "duration": "08:20",
+  "stopCount": 2
+ },
+ {
+  "number": "10004",
+  "name": "Chattogram Special",
+  "label": "Chattogram Special (10004)",
+  "origin": "Dhaka",
+  "destination": "Chattogram",
+  "days": [
+   "Sat",
+   "Sun"
+  ],
+  "duration": "05:30",
+  "stopCount": 2
+ }
+]
