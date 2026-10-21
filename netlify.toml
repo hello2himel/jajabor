@@ -1,0 +1,62 @@
+# Netlify — Jajabor
+#
+# Static Vite frontend plus serverless API functions replacing the local
+# Express proxy. Live mode is same-origin on Netlify:
+#   /api/search, /api/train-route, /api/handshake, /api/health
+#
+# netlify.toml sets VITE_PROXY_SAME_ORIGIN so the browser calls its own origin
+# instead of http://localhost:8788.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "22"
+  VITE_PROXY_SAME_ORIGIN = "true"
+
+[dev]
+  command = "npm run dev:web"
+  targetPort = 5173
+  port = 8888
+  framework = "#custom"
+
+# API functions must be matched before the SPA fallback.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
+
+# Client-side routes.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Cache-Control = "no-store"

@@ -4,10 +4,24 @@ const SESSION_KEY = "jajabor.session.v1";
 
 export function defaultProxy(): string {
   if (typeof window === "undefined") return "";
+
+  const configured = (import.meta.env.VITE_PROXY_URL as string | undefined)?.trim();
+  if (configured) return configured.replace(/\/+$/, "");
+
+  // Netlify builds set this: the deployed functions are the proxy.
+  if (import.meta.env.VITE_PROXY_SAME_ORIGIN === "true") return "";
+
   const host = window.location.hostname;
-  if (host === "localhost" || host === "127.0.0.1") return "";
-  const configured = import.meta.env.VITE_PROXY_URL as string | undefined;
-  return configured || "http://localhost:8788";
+  if (
+    host === "localhost" ||
+    host === "127.0.0.1" ||
+    host === "::1" ||
+    host === "[::1]" ||
+    host.endsWith(".netlify.app")
+  ) {
+    return "";
+  }
+  return "http://localhost:8788";
 }
 
 export function loadSession(): Session | null {

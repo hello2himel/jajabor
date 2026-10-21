@@ -115,7 +115,7 @@ export function SessionModal({
         status: "offline",
         message: explicitProxy
           ? "Couldn't reach this proxy."
-          : "No proxy at this address. Start it locally or enter a proxy URL.",
+          : "The built-in proxy isn't answering. Redeploy the site or start it locally.",
       });
     }
     return health.ok;
@@ -176,7 +176,7 @@ export function SessionModal({
       const online = await apiHealth(base);
       if (!online.ok && !value.proxy) {
         setError(
-          "No proxy is running at this address. Run `npm install && npm run live`, open http://localhost:8788, or enter your proxy URL above.",
+          "The built-in proxy isn't answering. Locally, run `npm install && npm run live`; on Netlify, redeploy so the API functions are available.",
         );
         setProxyState({ status: "offline", message: "Proxy not reachable." });
         setSaving(false);
@@ -321,7 +321,8 @@ export function SessionModal({
                 </label>
                 <p>
                   The railway API only accepts requests from its own site, so Jajabor forwards seat
-                  lookups through a small proxy you control.
+                  lookups through a small proxy: this site&apos;s serverless functions on Netlify, or
+                  the local Express server.
                 </p>
               </div>
               <span
@@ -354,7 +355,7 @@ export function SessionModal({
                     setProxy(event.target.value);
                     setProxyState({ status: "idle" });
                   }}
-                  placeholder="http://localhost:8788 (leave blank if this site is the proxy)"
+                  placeholder="Leave blank to use this site's built-in proxy"
                   spellCheck={false}
                 />
               </div>
@@ -369,14 +370,18 @@ export function SessionModal({
             </div>
             <div className="proxy-help">
               <p>
-                Running the app locally? Start it with{" "}
-                <code>npm install &amp;&amp; npm run live</code> and open{" "}
-                <code>http://localhost:8788</code>. Leave the proxy field blank there.
+                <strong>Local:</strong> run{" "}
+                <code>npm install &amp;&amp; npm run live</code>, open{" "}
+                <code>http://localhost:8788</code>, and leave the proxy field blank.
               </p>
               <p>
-                On GitHub Pages, start the proxy locally and use{" "}
-                <code>http://localhost:8788</code>. If your browser blocks an HTTPS page calling
-                localhost, open the app from the local server instead.
+                <strong>Netlify:</strong> this site deploys its own API functions. Leave the proxy
+                field blank.
+              </p>
+              <p>
+                <strong>GitHub Pages or another static host:</strong> start the local proxy and enter{" "}
+                <code>http://localhost:8788</code> here. If your browser blocks an HTTPS page
+                calling localhost, open the app from the local server instead.
               </p>
             </div>
           </div>
@@ -401,9 +406,9 @@ export function SessionModal({
             <div>
               <strong>What leaves this browser?</strong>
               <span>
-                Your token is sent only to the proxy address above, which forwards it to the
-                railway&apos;s own API. Jajabor has no analytics and no server of its own. Never
-                paste a token into a proxy you don&apos;t trust.
+                Your token is sent only to the proxy address above — this site&apos;s Netlify
+                Functions or your local server — which forwards it to the railway&apos;s own API.
+                Jajabor has no analytics. Never paste a token into a proxy you don&apos;t trust.
               </span>
             </div>
           </div>

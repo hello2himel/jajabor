@@ -521,8 +521,8 @@ export default function App() {
               <RefreshCw size={15} /> Try again
             </button>
             <div className="boot__error">
-              <AlertTriangle size={14} /> If this is GitHub Pages, check that <code>data/*.json</code>{" "}
-              was deployed with the site.
+              <AlertTriangle size={14} /> If this is a static deployment, check that{" "}
+              <code>data/*.json</code> was deployed with the site.
             </div>
           </>
         ) : (

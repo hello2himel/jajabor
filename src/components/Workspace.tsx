@@ -335,7 +335,10 @@ function ScanErrorPanel({
         {error.code === "proxy" && (
           <div className="scan-error-panel__code">
             <code>npm install &amp;&amp; npm run live</code>
-            <span>then open http://localhost:8788 or set the proxy address in Settings.</span>
+            <span>
+              Locally, then open http://localhost:8788. On Netlify, redeploy so the API functions
+              are available.
+            </span>
           </div>
         )}
 

@@ -124,7 +124,7 @@ export async function searchTrips(
   } catch (error) {
     if (signal?.aborted) throw error;
     throw new ApiError(
-      "Couldn't reach the Jajabor proxy. Is it running and is the proxy address correct?",
+      "Couldn't reach the Jajabor proxy. Locally, run npm run live; on Netlify, redeploy so the API functions are available.",
       0,
       "network",
     );
