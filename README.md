@@ -2,6 +2,8 @@
 
 **The train is full. Your journey isn't.**
 
+[![Deploy demo to GitHub Pages](https://github.com/hello2himel/jajabor/actions/workflows/deploy.yml/badge.svg)](https://github.com/hello2himel/jajabor/actions/workflows/deploy.yml)
+
 Jajabor is a split-ticket finder for Bangladesh Railway. It checks every useful
 station pair on a train, then stitches available seats into a journey — even
 when the direct ticket is sold out.
