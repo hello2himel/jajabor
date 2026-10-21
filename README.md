@@ -3,6 +3,7 @@
 **The train is full. Your journey isn't.**
 
 [![Deploy demo to GitHub Pages](https://github.com/hello2himel/jajabor/actions/workflows/deploy.yml/badge.svg)](https://github.com/hello2himel/jajabor/actions/workflows/deploy.yml)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/hello2himel/jajabor)
 
 Jajabor is a split-ticket finder for Bangladesh Railway. It checks every useful
 station pair on a train, then stitches available seats into a journey — even
@@ -36,14 +37,19 @@ stretches without a reserved seat.
   URL.
 - **Demo mode** — deterministic sample availability, so the site is useful the
   moment it loads.
-- **Live mode** — uses your own railway session through a local proxy. No
-  passwords, no OTPs, no analytics.
+- **Live mode** — uses your own railway session through a same-origin proxy:
+  local Express or serverless Netlify Functions. No passwords, no OTPs, no
+  analytics.
 
 ![Scan results](docs/scan.png)
 
 ## Try the demo
 
 **Hosted demo:** <https://hello2himel.github.io/jajabor/>
+
+Prefer your own deployment? Use the **Deploy to Netlify** button above; the
+repository includes both the static frontend and the live-mode serverless
+functions.
 
 Demo availability is simulated. It is designed to be plausible — long,
 hub-to-hub and premium segments sell out more often, short segments stay
@@ -80,29 +86,41 @@ forwards `/api` to the proxy.
 | Service | Default | Override |
 | --- | --- | --- |
 | Web + proxy (`npm run live`) | `8788` | `PORT=9000 npm start` |
-| Vite dev server | `5173` | `npm run dev -- --port 5174` |
+| Vite dev server | `5173` | `npm run dev:web -- --port 5174` |
 | Proxy used by Vite | `8788` | edit `vite.config.ts` |
 
 ## Live mode
 
 The search API only accepts requests from its own web origin, so a browser on a
-different domain can't call it directly. Jajabor ships a **small local proxy**
-for that. The proxy forwards your own session headers to the railway API; it
-does not store tokens on disk and does not log them.
+different domain can't call it directly. Jajabor ships two proxy backends that
+forward your own session headers to the railway API:
 
-### 1. Start the proxy
+- **Netlify Functions** — automatic when you deploy with the included
+  `netlify.toml`. Requests go to `/api/*` on the same origin.
+- **Local Express server** — used by `npm run live` and `npm run dev`.
+
+Jajabor's code does not store tokens on disk or log them.
+
+### 1. Start or deploy a proxy
+
+Locally:
 
 ```bash
 npm run live
 ```
 
-Or, if you only need the proxy for a hosted demo:
+Or, if you only need the proxy for a static build:
 
 ```bash
 npm install
 npm run build
 npm start
 ```
+
+On Netlify, deploy the repository with the included config. The four functions
+in `netlify/functions/` are wired to `/api/health`, `/api/search`,
+`/api/train-route`, and `/api/handshake` automatically. See
+[Deploy on Netlify](#deploy-on-netlify).
 
 ### 2. Connect your session
 
@@ -113,8 +131,9 @@ npm start
 3. Paste the bundle into **Session** in Jajabor, test the connection, and save.
 
 Leave the proxy field **blank** when you opened Jajabor from
-`http://localhost:8788`. Use `http://localhost:8788` when the frontend is served
-from somewhere else, such as GitHub Pages.
+`http://localhost:8788` or from its Netlify deployment. Use
+`http://localhost:8788` when the frontend is served from a static host such as
+GitHub Pages, with the local proxy running separately.
 
 The session is kept in `sessionStorage` by default and cleared when the tab
 closes. Choose **Remember this session** to keep it in `localStorage`. Expired
@@ -122,21 +141,34 @@ tokens are rejected; reconnect when that happens.
 
 ### How the proxy is secured
 
+**Local Express server**
+
 - Binds to `127.0.0.1` by default.
-- Forwards only the search and public timetable endpoints.
 - Validates station names, dates, and seat classes.
 - 30-second upstream timeout and a 240-request/minute local rate limit.
-- Tokens are never written to disk or included in logs.
 - To use it from another origin, set `ALLOWED_ORIGINS` (comma-separated). By
   default it reflects the requesting origin, which is convenient for local use.
   Set an explicit list if you expose the proxy beyond your machine.
 
+**Netlify Functions**
+
+- Same-origin by default. Cross-origin callers are allowed only when their
+  origin matches the deployment host or appears in `ALLOWED_ORIGINS`.
+- Validates every request before it reaches the railway API.
+- 8-second upstream timeout (override with `UPSTREAM_TIMEOUT_MS`) and an
+  in-instance rate limit.
+- Function responses use `Cache-Control: no-store`.
+- Tokens are forwarded as request headers; Jajabor's code never writes them to
+  disk or logs.
+
 ```bash
+# Local proxy, explicitly allowing the hosted frontend
 HOST=0.0.0.0 ALLOWED_ORIGINS=https://hello2himel.github.io npm start
 ```
 
-> **A note on credentials:** a session token is a bearer credential. Only run
-> the proxy on a machine you trust, and never deploy it as a public service.
+> **A note on credentials:** a session token is a bearer credential. Only use a
+> proxy deployment you trust. Jajabor's functions do not persist or log tokens,
+> but they necessarily relay them to the railway API while a scan is running.
 > Jajabor never asks for your railway password or OTP.
 
 ## How it works
@@ -191,7 +223,10 @@ src/
     session.ts            session parsing and token inspection
     cache.ts              short-lived client-side pair cache
 public/data/              bundled trains, routes, stations
-server/index.mjs          local CORS proxy + static frontend server
+netlify.toml              Netlify build, redirects, cache and security headers
+netlify/functions/        health, search, train-route, handshake functions
+server/index.mjs          local Express proxy + static frontend server
+server/netlify-upstream.mjs  shared proxy logic for Netlify Functions
 docs/                     screenshots
 ```
 
@@ -200,17 +235,60 @@ docs/                     screenshots
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Vite dev server + proxy |
+| `npm run dev:web` | Vite dev server only (used by Netlify Dev) |
 | `npm run build` | Typecheck and build to `dist/` |
 | `npm run live` | Build, then serve web + proxy on `8788` |
 | `npm start` | Serve an existing `dist/` + proxy |
 | `npm run typecheck` | TypeScript only |
 | `npm run preview` | Preview the built frontend (no proxy) |
 
-## Deploying the demo
+## Deploy on Netlify
+
+The repository is Netlify-ready. Click **Deploy to Netlify** above, or import
+the GitHub repository in the Netlify dashboard, and accept the detected
+settings. No manual build command or publish directory is needed.
+
+`netlify.toml` is ready to use as-is:
+
+- Builds with `npm run build` and publishes `dist/`.
+- Deploys the functions in `netlify/functions/` on Node 22.
+- Routes `/api/*` to the functions before the SPA fallback.
+- Sets `VITE_PROXY_SAME_ORIGIN=true`, so Netlify builds use their own `/api`
+  functions without a local proxy.
+- Adds long-lived caching for hashed assets, short caching for timetable JSON,
+  and standard security headers.
+
+Optional Netlify environment variables:
+
+| Variable | Purpose |
+| --- | --- |
+| `ALLOWED_ORIGINS` | Extra comma-separated origins allowed to call the functions |
+| `RAILWAY_API_BASE` | Override the upstream API base |
+| `UPSTREAM_TIMEOUT_MS` | Upstream timeout for functions (default `8000`) |
+| `ALLOW_ANY_ORIGIN` | Set to `true` only if you intentionally want an open proxy |
+
+Demo mode works on any Netlify plan. Live mode uses the deployment's functions,
+so visitors still only need to paste their own railway session — no local server
+is required.
+
+To point another static frontend at these functions, paste the Netlify site's
+origin into Jajabor's proxy field and add the frontend origin to
+`ALLOWED_ORIGINS`.
+
+To test the functions locally with Netlify's routing and redirects:
+
+```bash
+npx netlify-cli dev
+```
+
+The site is served on <http://localhost:8888>, with the functions behind `/api/*`.
+
+## Deploying the GitHub Pages demo
 
 The included GitHub Actions workflow builds with `BASE_PATH=/jajabor/` and
-publishes `dist/` to GitHub Pages. The hosted demo is static and needs no
-backend. Live mode still requires the local proxy.
+publishes `dist/` to GitHub Pages. That hosted demo is static; live mode still
+requires the local proxy. For Netlify, the serverless functions are included
+automatically — see the Netlify configuration above.
 
 To build for a different Pages path:
 
@@ -220,7 +298,8 @@ BASE_PATH=/your-repo/ npm run build
 
 ## Limitations
 
-- Live mode requires a running local proxy and a valid railway session.
+- Live mode requires a proxy — Netlify Functions or the local Express server —
+  and a valid railway session.
 - The railway API is unofficial and can change without notice.
 - A no-ticket hop means exactly that: no reserved seat for that stretch. Check
   local rules and availability before travelling.

@@ -10,5 +10,6 @@ coverage/
 !.env.example
 *.tsbuildinfo
 .vite/
+.netlify/
 playwright-report/
 test-results/
